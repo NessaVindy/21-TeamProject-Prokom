@@ -1,3 +1,2 @@
-Nama Bank,Jumlah Pinjaman,Persen Bunga,Bunga Angsuran,Angsuran Pokok
-Mandiri,2000000,6.0%,120000.0,55555.555555555555
-Mandiri,3200000,2.0%,64000.0,17777.777777777777
+Nama Bank,Jumlah Pinjaman,Persen Bunga,Bunga Angsuran,Angsuran Pokok,Jumlah Pengembalian
+Mandiri,20000000,3.0%,600000.0,166666.66666666666,766666.6666666666

@@ -13,14 +13,15 @@ def data(Jumlah_pinjaman, nomor):
     jumlah_bulan1 = int(jumlah_bulan[:-6])
     jumlah_bulan2 = jumlah_bulan1*12
     angsuran = Jumlah_pinjaman/jumlah_bulan2
+    total_pengembalian = bunga + angsuran
     data_1 = {'Nama Bank':  [data_bank], 'Jumlah Pinjaman' : [Jumlah_pinjaman],
-        'Persen Bunga': [persen_bunga], 'Bunga Angsuran' : [bunga], 'Angsuran Pokok' :[angsuran]}
+        'Persen Bunga': [persen_bunga], 'Bunga Angsuran' : [bunga], 'Angsuran Pokok' :[angsuran], 'Jumlah Pengembalian' :[total_pengembalian]}
     return data_1
 
 while True:
     try:
        nomor = int(input("Masukkan kode bank: "))
-       if nomor <= 20 : 
+       if nomor <= 20 and nomor >=1 : 
         Jumlah_pinjaman = int(input("Masukkan Jumlah Pinjaman: "))
         data_asli = data(Jumlah_pinjaman, nomor)
         data_1 = pd.DataFrame(data_asli)
@@ -30,7 +31,7 @@ while True:
             validasi = input("Apakah Anda ingin mengajukan KPR lagi? (Ya/Tidak): ")
             if validasi.lower() == "ya":
                 nomor = int(input("Masukkan kode bank: "))
-                if nomor <= 20: 
+                if nomor <= 20 and nomor >=1: 
                     Jumlah_pinjaman = int(input("Masukkan Jumlah Pinjaman: "))
                     data_2 = data(Jumlah_pinjaman, nomor)
                     data_2 = pd.DataFrame(data_2)
